@@ -5,6 +5,7 @@ class AuthorsController < ApplicationController
     authors = Author.all 
     render json: authors
   end
+  #include: {profile: { only: [:username, :email, :bio, :avatar_url]}}
 
   def show
     author = Author.find(params[:id])
